@@ -7,6 +7,11 @@ terraform {
   }
 }
 
+provider "registry.terraform.io/snowflake-labs/snowflake" {
+  version     = "0.83.1"
+  constraints = "~> 0.83"
+}
+
 provider "snowflake" {
   alias       = "accountadmin"
   role        = "ACCOUNTADMIN"
