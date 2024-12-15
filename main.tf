@@ -10,9 +10,9 @@ terraform {
 provider "snowflake" {
   alias       = "accountadmin"
   role        = "ACCOUNTADMIN"
-  account     = var.snowflake_account
-  username    = var.snowflake_username
-  password    = var.snowflake_password
+  account     = snowflake_account
+  username    = snowflake_username
+  password    = snowflake_password
 }
 
 resource "snowflake_database" "demo_db" {
