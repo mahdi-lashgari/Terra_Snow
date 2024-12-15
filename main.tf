@@ -1,9 +1,9 @@
 provider "snowflake" {
-  alias       = "accountadmin"
-  role        = "ACCOUNTADMIN"
-  account     = snowflake_account
-  username    = snowflake_username
-  password    = snowflake_password
+  alias    = "accountadmin"
+  role     = "ACCOUNTADMIN"
+  account  = snowflake_account
+  username = snowflake_username
+  password = snowflake_password
 }
 
 resource "snowflake_database" "demo_db" {
