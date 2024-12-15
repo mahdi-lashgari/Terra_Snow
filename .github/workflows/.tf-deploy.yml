@@ -23,7 +23,15 @@ jobs:
         with:
           terraform_version: latest
           terraform_wrapper: false
-          
+      
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check
+
+      - name: Terraform Init
+        id: init
+        run: terraform init -upgrade
+        
       - name: setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:
@@ -36,14 +44,6 @@ jobs:
       - name: terragrunt plan
         run: terragrunt plan
         continue-on-error: true
-        
-      - name: Terraform Format
-        id: fmt
-        run: terraform fmt -check
-
-      - name: Terraform Init
-        id: init
-        run: terraform init -upgrade
         
       - name: terragrunt apply
         run: terragrunt apply
