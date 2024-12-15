@@ -7,6 +7,14 @@ terraform {
   }
 }
 
+provider "snowflake" {
+  alias       = "accountadmin"
+  role        = "ACCOUNTADMIN"
+  account     = var.snowflake_account
+  username    = var.snowflake_username
+  password    = var.snowflake_password
+}
+
 resource "snowflake_database" "demo_db" {
   name    = "DEMO_DB"
   comment = "Database for Snowflake Terraform demo"
