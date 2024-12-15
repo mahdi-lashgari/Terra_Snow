@@ -1,0 +1,12 @@
+name: tf
+
+on: [push]
+
+jobs:
+  terragrunt:
+    name: tf
+    runs-on: ubuntu-latest
+    env:
+      TF_SNOWFLAKE_ACCOUNT: ${{ vars.SNOWFLAKE_ACCOUNT }}
+      TF_SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      TF_SNOWFLAKE_USER: ${{ vars.SNOWFLAKE_USER }}
