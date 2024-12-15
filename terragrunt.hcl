@@ -1,3 +1,7 @@
+terraform {
+  source = "../"
+}
+
 locals {
   account_id              = get_env("TF_SNOWFLAKE_ACCOUNT")
   aws_region              = ""
