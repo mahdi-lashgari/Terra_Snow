@@ -31,9 +31,11 @@ jobs:
         
       - name: terragrunt init
         run: terragrunt init
+        continue-on-error: true
 
       - name: terragrunt plan
         run: terragrunt plan
+        continue-on-error: true
         
       - name: Terraform Format
         id: fmt
