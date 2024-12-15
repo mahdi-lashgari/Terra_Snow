@@ -25,13 +25,10 @@ jobs:
         uses: autero1/action-terragrunt@v3
         
       - name: terragrunt init
+        run: terragrunt init
 
       - name: terragrunt plan
-        id: plan
-        
-      - name: terragrunt write plan
-        if: steps.plan.outcome == 'success'
-        id: write
+        run: terragrunt plan
         
       - name: Terraform Format
         id: fmt
@@ -46,8 +43,8 @@ jobs:
         run: terraform validate -no-color
         
       - name: terragrunt apply
+        run: terragrunt apply
         
       - name: Terraform Apply
         id: apply
-        
         run: terraform apply -auto-approve
