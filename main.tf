@@ -2,11 +2,7 @@ terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = latest
-    }
-    random = {
-      source  = "hashicorp/random"
-      version = latest
+      version = "~> 0.68.2"
     }
   }
 }
