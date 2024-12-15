@@ -44,14 +44,6 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
         
       - name: terragrunt apply
         run: terragrunt apply
-        
-      - name: Terraform Apply
-        id: apply
-        run: terraform apply -auto-approve
