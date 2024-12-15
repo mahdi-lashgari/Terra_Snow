@@ -5,14 +5,6 @@ terraform {
       version = "0.25.17"
     }
   }
-
-  backend "remote" {
-    organization = "MyMehdiTeam"
-
-    workspaces {
-      name = "gh-actions-demo"
-    }
-  }
 }
 
 provider "snowflake" {
