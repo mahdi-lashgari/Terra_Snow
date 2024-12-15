@@ -1,6 +1,10 @@
 name: tf
 
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   terragrunt:
@@ -10,3 +14,40 @@ jobs:
       TF_SNOWFLAKE_ACCOUNT: ${{ vars.SNOWFLAKE_ACCOUNT }}
       TF_SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       TF_SNOWFLAKE_USER: ${{ vars.SNOWFLAKE_USER }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: setup Terragrunt
+        uses: autero1/action-terragrunt@v3
+        
+      - name: terragrunt init
+
+      - name: terragrunt plan
+        id: plan
+        
+      - name: terragrunt write plan
+        if: steps.plan.outcome == 'success'
+        id: write
+        
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+        
+      - name: terragrunt apply
+        
+      - name: Terraform Apply
+        id: apply
+        
+        run: terraform apply -auto-approve
