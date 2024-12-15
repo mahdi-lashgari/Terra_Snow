@@ -22,6 +22,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: latest
+          terraform_wrapper: false
           
       - name: setup Terragrunt
         uses: autero1/action-terragrunt@v3
