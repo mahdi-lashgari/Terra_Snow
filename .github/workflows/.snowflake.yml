@@ -20,9 +20,13 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-
+        with:
+          terraform_version: 1.9.4
+          
       - name: setup Terragrunt
         uses: autero1/action-terragrunt@v3
+        with:
+          terragrunt-version: 0.66.6
         
       - name: terragrunt init
         run: terragrunt init
