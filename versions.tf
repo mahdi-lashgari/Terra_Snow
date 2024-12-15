@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    snowflake = {
+      source  = "Snowflake-Labs/snowflake"
+      version = "~> 0.68.2"
+    }
+  }
+}
+
 provider "snowflake" {
   alias         = "accountadmin"
   user          = var.snowflake_username
