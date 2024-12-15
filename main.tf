@@ -1,11 +1,13 @@
-required_providers {
-  snowflake = {
-    source  = "Snowflake-Labs/snowflake"
-    version = "~> 0.68.2"
-  }
-  random = {
-    source  = "hashicorp/random"
-    version = "3.3.2"
+terraform {
+  required_providers {
+    snowflake = {
+      source  = "Snowflake-Labs/snowflake"
+      version = "~> 0.68.2"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.3.2"
+    }
   }
 }
 
