@@ -2,6 +2,10 @@ resource "snowflake_sequence" "sequence" {
   database = snowflake_database.demo_db.name
   schema   = snowflake_schema.demo_schema.name
   name     = "sequence"
+
+  lifecycle {
+    prevent_destroy = false
+  }
 }
 
 resource "snowflake_table" "table" {
@@ -58,6 +62,6 @@ resource "snowflake_table" "table" {
   }
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
