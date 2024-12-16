@@ -3,7 +3,7 @@ resource "snowflake_database" "demo_db" {
   comment = "Database for Snowflake Terraform demo"
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
@@ -13,6 +13,6 @@ resource "snowflake_schema" "demo_schema" {
   comment  = "Schema for Snowflake Terraform demo"
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
