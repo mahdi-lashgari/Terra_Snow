@@ -21,7 +21,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: latest
+          terraform_version: "0.83.1"
           terraform_wrapper: false
       
       - name: Terraform Format
