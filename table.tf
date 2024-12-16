@@ -3,8 +3,10 @@ resource "snowflake_sequence" "sequence" {
   schema   = snowflake_schema.demo_schema.name
   name     = "sequence"
 
+  depends_on = [snowflake_database.databases, snowflake_schema.schemas]
+
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 }
 
@@ -61,7 +63,9 @@ resource "snowflake_table" "table" {
     keys = ["data"]
   }
 
+  depends_on = [snowflake_database.databases, snowflake_schema.schemas]
+
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 }
