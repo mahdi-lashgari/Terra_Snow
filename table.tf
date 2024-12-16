@@ -1,6 +1,6 @@
 resource "snowflake_sequence" "sequence" {
-  database = snowflake_database.demo_db.name
-  schema   = snowflake_schema.demo_schema.name
+  database = snowflake_database.databases.name
+  schema   = snowflake_schema.schemas.name
   name     = "sequence"
 
   depends_on = [snowflake_database.databases, snowflake_schema.schemas]
@@ -11,8 +11,8 @@ resource "snowflake_sequence" "sequence" {
 }
 
 resource "snowflake_table" "table" {
-  database                    = snowflake_database.demo_db.name
-  schema                      = snowflake_schema.demo_schema.name
+  database                    = snowflake_database.databases.name
+  schema                      = snowflake_schema.schemas.name
   name                        = "table1"
   comment                     = "A table."
   cluster_by                  = ["to_date(DATE)"]
