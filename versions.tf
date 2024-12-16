@@ -7,8 +7,9 @@ terraform {
     }
 
     snowflake = {
-      source  = "Snowflake-Labs/snowflake"
-      version = "~> 0.83"
+      source                = "Snowflake-Labs/snowflake"
+      version               = "~> 0.83"
+      configuration_aliases = [snowflake.accountadmin]
     }
 
   }
