@@ -10,6 +10,17 @@ jobs:
   terragrunt:
     name: tf
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      packages: read
+      contents: read
+      pull-requests: write
+    env:
+      tf_version: 1.9.4
+      tg_version: 0.66.6    
+      SNOWFLAKE_ACCOUNT: ${{ vars.SNOWFLAKE_ACCOUNT }}
+      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      SNOWFLAKE_USER: ${{ vars.SNOWFLAKE_USER }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
