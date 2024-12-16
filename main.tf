@@ -18,3 +18,4 @@ resource "snowflake_schema" "schemas" {
     prevent_destroy = true
   }
 }
+
