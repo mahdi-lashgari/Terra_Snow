@@ -1,18 +1,13 @@
-resource "snowflake_schema" "schema" {
-  database = "DEMO_DB"
-  name     = "DEMO_SCHEMA"
-}
-
 resource "snowflake_sequence" "sequence" {
-  database = snowflake_schema.schema.database
-  schema   = snowflake_schema.schema.name
+  database = snowflake_database.demo_db.name
+  schema   = snowflake_schema.demo_schema.name
   name     = "sequence"
 }
 
 resource "snowflake_table" "table" {
-  database                    = snowflake_schema.schema.database
-  schema                      = snowflake_schema.schema.name
-  name                        = "table"
+  database                    = snowflake_database.demo_db.name
+  schema                      = snowflake_schema.demo_schema.name
+  name                        = "table1"
   comment                     = "A table."
   cluster_by                  = ["to_date(DATE)"]
   data_retention_time_in_days = 1
