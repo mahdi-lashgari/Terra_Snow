@@ -8,7 +8,7 @@ resource "snowflake_database" "databases" {
 }
 
 resource "snowflake_schema" "schemas" {
-  database = snowflake_database.demo_db.name
+  database = snowflake_database.databases.name
   name     = "DEMO_SCHEMA"
   comment  = "Schema for Snowflake Terraform demo"
 
