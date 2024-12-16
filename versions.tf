@@ -1,9 +1,18 @@
 terraform {
+  required_version = "~> 1.9.0"
   required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "1.9.4"
+      version = "~> 0.83"
     }
+
+  }
+  backend "s3" {
   }
 }
 
