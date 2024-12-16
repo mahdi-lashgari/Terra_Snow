@@ -1,6 +1,3 @@
-terraform {
-  source = "../"
-}
 
 locals {
   account_id              = get_env("SNOWFLAKE_ACCOUNT")
