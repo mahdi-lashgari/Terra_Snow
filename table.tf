@@ -56,4 +56,8 @@ resource "snowflake_table" "table" {
     name = "my_key"
     keys = ["data"]
   }
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
