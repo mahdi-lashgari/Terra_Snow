@@ -8,9 +8,9 @@ terraform {
 }
 
 provider "snowflake" {
-  alias         = "accountadmin"
-  user          = var.snowflake_username
-  account       = var.snowflake_account
-  password      = var.snowflake_password
-  role          = "ACCOUNTADMIN"
+  alias    = "accountadmin"
+  user     = var.snowflake_username
+  account  = var.snowflake_account
+  password = var.snowflake_password
+  role     = "ACCOUNTADMIN"
 }
