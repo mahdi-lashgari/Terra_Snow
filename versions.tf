@@ -7,6 +7,7 @@ terraform {
   }
 }
 
+#
 provider "snowflake" {
   alias         = "accountadmin"
   user          = var.snowflake_username
