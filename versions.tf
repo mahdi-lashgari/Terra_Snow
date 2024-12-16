@@ -1,10 +1,8 @@
 terraform {
-  required_version = "~> 1.9.0"
   required_providers {
     snowflake = {
-      source                = "Snowflake-Labs/snowflake"
-      version               = "~> 0.83"
-      configuration_aliases = [snowflake.accountadmin]
+      source = "Snowflake-Labs/snowflake"
+      version = "1.0.0"
     }
   }
 }
