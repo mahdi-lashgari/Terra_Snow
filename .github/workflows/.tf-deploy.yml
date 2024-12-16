@@ -50,3 +50,5 @@ jobs:
         
       - name: terragrunt apply
         run: terragrunt apply
+        env:
+          TF_CLI_ARGS: -auto-approve
