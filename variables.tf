@@ -1,15 +1,15 @@
 variable "snowflake_account" {
   type  = string
-  value = ${{ vars.SNOWFLAKE_ACCOUNT }}
+  value = var.snowflake_account
 }
 
 variable "snowflake_username" {
   type  = string
-  value = ${{ secrets.SNOWFLAKE_PASSWORD }}
+  value = var.snowflake_username
 }
 
 variable "snowflake_password" {
   type      = string
   sensitive = true
-  value     = ${{ vars.SNOWFLAKE_USER }}
+  value     = var.snowflake_password
 }
