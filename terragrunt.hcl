@@ -3,7 +3,7 @@ terraform {
 }
 
 locals {
-  account_id              = get_env("TF_SNOWFLAKE_ACCOUNT")
+  account_id              = get_env("SNOWFLAKE_ACCOUNT")
   aws_region              = ""
   environment_type        = "production"
   environment_name        = "snowflake-prod"
@@ -12,7 +12,7 @@ locals {
 }
 
 inputs = {
-  snowflake_username                  = get_env("TF_SNOWFLAKE_USER")
-  snowflake_account                   = get_env("TF_SNOWFLAKE_ACCOUNT")
-  snowflake_password                  = get_env("TF_SNOWFLAKE_PASSWORD")
+  snowflake_username                  = get_env("SNOWFLAKE_USER")
+  snowflake_account                   = get_env("SNOWFLAKE_ACCOUNT")
+  snowflake_password                  = get_env("SNOWFLAKE_PASSWORD")
 }
