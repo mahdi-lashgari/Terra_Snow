@@ -1,6 +1,6 @@
 resource "snowflake_schema" "schema" {
-  database  = "DEMO_DB"
-  name      = "DEMO_SCHEMA"
+  database = "DEMO_DB"
+  name     = "DEMO_SCHEMA"
 }
 
 resource "snowflake_sequence" "sequence" {
