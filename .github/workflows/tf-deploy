@@ -10,7 +10,7 @@ on:
 
 jobs:
   tf-deploy:
-    uses: ./.github/workflows/.snowflake.yml
+    uses: ./.github/workflows/.tf-deploy.yml
     with:
       environment: snowflake-prod
       account_id: ${{ vars.SNOWFLAKE_ACCOUNT }}
